@@ -1,0 +1,30 @@
+{
+    "version": "0.2",
+    "name": "TMGC-JS",
+    "description": "A basic Tamagotchi simulator",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/img/logo-16.png",
+        "48": "/img/logo-48.png",
+        "60": "/img/logo-60.png",
+        "128": "/img/logo-128.png"
+    },
+    "developer": {
+        "name": "Richard Armuelles",
+        "url": "http://www.alswblog.org"
+    },
+    "installs_allowed_from": ["*"],
+    "locales": {
+        "en": {
+            "description": "A basic Tamagotchi simulator",
+            "developer": {
+                "name": "Richard Armuelles",
+                "url": "http://www.alswblog.org"
+            }
+        }
+    },
+    "default_locale": "en",
+    "permissions": {     
+    },
+    "fullscreen": "true"
+}

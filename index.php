@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" media="screen" />
+	<link rel="stylesheet" href="./css/main.css" media="screen" />
+	<title>
+	</title>
+</head>
+<body>
+	<div id="container">
+		<header class="menu">
+			<ul>
+				<li id="li0"><span><img src="./img/cadran.png" alt="" /></span></li>
+				<li id="li1"><span><img src="./img/food.png" alt="" /></span></li>
+				<li id="li2"><span><img src="./img/wc.png" alt="" /></span></li>
+				<li id="li3"><span><img src="./img/jeu.png" alt="" /></span></li>
+			</ul>
+		</header>
+		<section>
+			<div id="screen">
+				<div id="img">
+					<img id="tamapic" src="./img/chars/00/main.gif" alt="" />
+				</div>
+				<img id="water" src="./img/other/water.gif" alt="" />
+			</div>
+			<div id="defeat">
+				Because of you, this lovely creature died. Shame on you ! <br />
+				It lived <span id="time"></span> seconds
+			</div>
+		</section>
+		<footer class="menu">
+			<ul>
+				<li id="li4"><span><img src="./img/punition.png" alt="" /></span></li>
+				<li id="li5"><span><img src="./img/sante.png" alt="" /></span></li>
+				<li id="li6"><span><img src="./img/lumiere.png" alt="" /></span></li>
+				<li id="li7"><span><img src="./img/alerte.png" alt="" /></span></li>
+			</ul>
+		</footer>
+	</div>
+	<div id="navigation">
+		<div id="li0-content" class="li-content">
+			<fieldset>
+				<legend>Hungry</legend>
+				<div id="hungerbar"></div>
+			</fieldset>
+			<fieldset>
+				<legend>Happy</legend>
+				<div id="happybar"></div>
+			</fieldset>
+			<fieldset>
+				<legend>Discipline</legend>
+				<div id="trainingbar"></div>
+			</fieldset>
+			<fieldset>
+				<legend>Characteristic</legend>
+				<label>Age :</label> <span id="age"></span><br/>
+				<label>Weight :</label> <span id="weight"></span><br/>
+				<label>Name :</label> <span id="name"></span>
+			</fieldset>
+			<!--
+			<fieldset>
+				<legend>Other</legend>
+				<label>Style :</label> <span id="gender"></span><br/>
+				<label>Generation :</label> <span id="generation"></span>
+			</fieldset>
+			-->
+		</div>
+		<div id="li1-content" class="li-content">
+			<fieldset>
+				<legend>Feeding</legend>
+				<input type="button" value="Snack" onclick="tamaControls.FeedingTime('snack')" /><br/>
+				<input type="button" value="Food" onclick="tamaControls.FeedingTime('food')" /><br/>
+			</fieldset>
+		</div>
+		<!-- <div id="li2-content" class="li-content"></div> -->
+		<!-- <div id="li3-content" class="li-content"></div> -->
+		<div id="li4-content" class="li-content">
+			<fieldset>
+				<legend>Discipline</legend>
+				<input type="button" value="Praise" onclick="tamaControls.Discipline('praise')" /><br/>
+				<input type="button" value="Punish" onclick="tamaControls.Discipline('punish')" /><br/>
+			</fieldset>
+		</div>
+		<!-- <div id="li6-content" class="li-content"></div> -->
+		<!-- <div id="li7-content" class="li-content"></div> -->
+		<!-- <div id="li8-content" class="li-content"></div> -->
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript">
+	window.onload = function()
+	{
+
+		$( this ).dialog( "close" );
+		$('li span').each(function()
+		{
+			var id = $(this).parent()[0].id;
+			switch(id)
+			{
+				case 'li0':
+				$(this).bind('click', function(e){ tamaControls.HungerMeter();});
+				break;
+				case 'li1':
+				$(this).bind('click', function(e){ tamaControls.FeedingTime();});
+				break;
+				case 'li2':
+				$(this).bind('click', function(e){ tamaControls.Toilet();});
+				break;
+				case 'li3':
+				$(this).bind('click', function(e){ tamaControls.GamingTime();});
+				break;
+				case 'li4':
+				$(this).bind('click', function(e){ tamaControls.Discipline();});
+				break;
+				case 'li5':
+				$(this).bind('click', function(e){ tamaControls.Health();});
+				break;
+				case 'li6':
+				$(this).bind('click', function(e){ tamaControls.Lights();});
+				break;
+			}
+
+		})
+
+		tama.init();
+	}
+	</script>
+</body>

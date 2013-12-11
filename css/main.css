@@ -174,7 +174,11 @@ footer
 	border-top: none;
 	border-radius: 0 0 5px 5px;
 	top: 11%;
+<<<<<<< HEAD
 	left: 8%;
+=======
+	left: 18%;
+>>>>>>> 2a85e625edace9238acf648001197a7a72861085
 
 }
 #li1-content
@@ -183,7 +187,11 @@ footer
 	border-top: none;
 	border-radius: 0 0 5px 5px;
 	top: 11%;
+<<<<<<< HEAD
 	left: 8%;
+=======
+	left: 38%;
+>>>>>>> 2a85e625edace9238acf648001197a7a72861085
 }
 #li4-content
 {	
@@ -191,7 +199,11 @@ footer
 	margin-bottom : -4px;
 	border-bottom: none;
 	border-radius: 5px 5px 0 0;
+<<<<<<< HEAD
 	left: 8%;
+=======
+	left: 18%;
+>>>>>>> 2a85e625edace9238acf648001197a7a72861085
 }
 
 fieldset 

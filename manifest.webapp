@@ -21,6 +21,12 @@
                 "name": "Richard Armuelles",
                 "url": "http://www.alswblog.org"
             }
+        "de": {
+            "description": "Ein einfacher Tamagotchi-Simulator",
+            "developer": {
+                "name": "Richard Armuelles",
+                "url": "http://www.alswblog.org"
+            }
         }
     },
     "default_locale": "en",

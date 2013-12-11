@@ -1,4 +1,4 @@
-TMGC
-====
+TMGC-JS
+=======
 
-Un petit Tamagotchi encore incomplet
+A little Tamagotchi game for the web. It isn't complete yet, but playable.

@@ -1,6 +1,5 @@
 var k = 1/1000;
-var loopTime = 10;
-var loopTime = 0.01*1000;
+var loopTime = 0.01*1000;// = 10 ms
 var water = document.getElementById('water');
 var tamaVars =
 {
@@ -13,7 +12,7 @@ var tamaVars =
 	training: 0,
 	age: 1,
 	weight: 100,
-	name: 'bouh',
+	name: 'Itchy',
 	gender: 'Boy',
 	generation: 1,
 	state: -1,
@@ -90,7 +89,6 @@ var tamaControls =
 		$('#weight').html(Math.round(tamaVars.weight) / 100 + ' g');
 		$('#name').html(tamaVars.name);
 		$('#gender').html(tamaVars.gender);
-		//$('#gender').html(tamaVars.gender);
 		//$('#generation').html(tamaVars.generation);
 
 		if(!actualizing)

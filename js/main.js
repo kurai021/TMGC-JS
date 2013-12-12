@@ -1,9 +1,6 @@
 var k = 1/1000;
-<<<<<<< HEAD
 var loopTime = 10;
-=======
 var loopTime = 0.01*1000;
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 var water = document.getElementById('water');
 var tamaVars =
 {
@@ -16,13 +13,8 @@ var tamaVars =
 	training: 0,
 	age: 1,
 	weight: 100,
-<<<<<<< HEAD
-	name: "Itchy",
-	gender: "boy",
-=======
 	name: 'bouh',
 	gender: 'Boy',
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 	generation: 1,
 	state: -1,
 	animation: 'main',
@@ -31,7 +23,6 @@ var tamaVars =
 	tidy: true,
 	water:-50,
 	dung:0,
-<<<<<<< HEAD
 	sick: false
 }
 
@@ -51,10 +42,6 @@ $(function() {
 	});
 });
 
-=======
-	sick: false,
-}
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 var tamaRules =
 {
 	loop:
@@ -102,11 +89,8 @@ var tamaControls =
 		$('#age').html(Math.floor(tamaVars.age) + ' years');
 		$('#weight').html(Math.round(tamaVars.weight) / 100 + ' g');
 		$('#name').html(tamaVars.name);
-<<<<<<< HEAD
 		$('#gender').html(tamaVars.gender);
-=======
 		//$('#gender').html(tamaVars.gender);
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 		//$('#generation').html(tamaVars.generation);
 
 		if(!actualizing)
@@ -184,7 +168,6 @@ var tamaControls =
 		if(tamaControls.lights)
 		{
 			document.getElementById('screen').style.backgroundColor = '#777777';
-<<<<<<< HEAD
 			document.getElementById('tamapic').src = './img/chars/0'+state+'/sleep.gif';
 			document.getElementById("li1").style.visibility='hidden';
 			document.getElementById("li2").style.visibility='hidden';
@@ -192,14 +175,11 @@ var tamaControls =
 			document.getElementById("li4").style.visibility='hidden';
 			document.getElementById("li5").style.visibility='hidden';
 			document.getElementById("li7").style.visibility='hidden';
-=======
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 			tamaControls.lights = false;
 		}
 		else
 		{
 			document.getElementById('screen').style.backgroundColor = '#fff';
-<<<<<<< HEAD
 			document.getElementById('tamapic').src = './img/chars/0'+state+'/main.gif';
 			document.getElementById("li1").style.visibility='visible';
 			document.getElementById("li2").style.visibility='visible';
@@ -207,8 +187,6 @@ var tamaControls =
 			document.getElementById("li4").style.visibility='visible';
 			document.getElementById("li5").style.visibility='visible';
 			document.getElementById("li7").style.visibility='visible';
-=======
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 			tamaControls.lights = true;
 		}
 	},
@@ -541,11 +519,4 @@ var tama =
 			document.getElementById('time').innerHTML = Math.round(tama.counter/(1000/loopTime));
 		}
 	}
-<<<<<<< HEAD
 }
-=======
-
-}
-
-
->>>>>>> 2a85e625edace9238acf648001197a7a72861085

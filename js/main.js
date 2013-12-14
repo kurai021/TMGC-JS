@@ -29,14 +29,14 @@ var tamaVars =
 
 $(function() {
 	$( "#load" ).on('click', function() {
-		var tamaLoad = localStorage.getItem("tamaVars");
+		var tamaLoad = asyncStorage.getItem("tamaVars");
 		tamaVars = JSON.parse(tamaLoad);
 	});
 });
 
 $(function() {
 	$( "#save" ).on('click', function() {
-		localStorage.setItem('tamaVars', JSON.stringify(tamaVars));
+		asyncStorage.setItem('tamaVars', JSON.stringify(tamaVars));
 	});
 });
 

@@ -1,49 +1,49 @@
 var k = 1/1000;
-var loopTime = 10;
-var loopTime = 0.01*1000;
-var water = document.getElementById('water');
+var loopTime = 0.01*1000;// = 10 ms
+var $water   = $('#water');
+var $tamaPic = $('#tamapic');
+var $screen  = $('#screen');
 var tamaVars =
 {
-	hunger: 50,
-	happyness: 50,
-	diabetes: 0,
-	illness: 0,
-	insalubrity: 0,
-	utp: 0,
-	training: 0,
-	age: 1,
-	weight: 100,
-	name: 'bouh',
-	gender: 'Boy',
-	generation: 1,
-	state: -1,
-	animation: 'main',
-	busy: false,
-	doingbullshit: 0,
-	tidy: true,
-	water:-50,
-	dung:0,
-	sick: false
+	hunger:             50,
+	happyness:          50,
+	diabetes:            0,
+	illness:             0,
+	insalubrity:         0,
+	utp:                 0,// What?!
+	training:            0,
+	age:                 1,
+	weight:            100,
+	name:          'Itchy',
+	gender:          'Boy',
+	generation:          1,
+	state:              -1,
+	animation:      'main',
+	busy:            false,
+	doingbullshit:       0,
+	tidy:             true,
+	water:             -50,
+	dung:                0,
+	sick:            false
 }
 
 $(function() {
-	$( "#load" ).click(function() {
+	$( "#load" ).on('click', function() {
 		var tamaLoad = localStorage.getItem("tamaVars");
-		tamaVars = JSON.parse(tamaLoad); //var test is now re-loaded!
-		/*var tamaLoad2 = localStorage.getItem("tama");
-		tama = JSON.parse(tamaLoad2); //var test is now re-loaded!*/
+		tamaVars = JSON.parse(tamaLoad);
 	});
 });
 
 $(function() {
-	$( "#save" ).click(function() {
+	$( "#save" ).on('click', function() {
 		localStorage.setItem('tamaVars', JSON.stringify(tamaVars));
-		/*localStorage.setItem('tama', JSON.stringify(tama));*/
 	});
 });
 
 var tamaRules =
 {
+	// TODO: Clean this part up to make it more verbose. E.g. k is defined
+	//       in line 1!
 	loop:
 	{
 		hunger: -1*k,
@@ -90,7 +90,6 @@ var tamaControls =
 		$('#weight').html(Math.round(tamaVars.weight) / 100 + ' g');
 		$('#name').html(tamaVars.name);
 		$('#gender').html(tamaVars.gender);
-		//$('#gender').html(tamaVars.gender);
 		//$('#generation').html(tamaVars.generation);
 
 		if(!actualizing)
@@ -109,6 +108,7 @@ var tamaControls =
 				tama.add('utp', 20);
 				tama.add('weight', 10, true);
 
+				// According to conventions, it should be addSprites …
 				tamaControls.addsprites('food', 2000);
 			}
 			else if(type == 'snack')
@@ -165,28 +165,29 @@ var tamaControls =
 	},
 	Lights: function()
 	{
+		// FIXME Replace with a .toggle() on lights property
 		if(tamaControls.lights)
 		{
-			document.getElementById('screen').style.backgroundColor = '#777777';
-			document.getElementById('tamapic').src = './img/chars/0'+state+'/sleep.gif';
-			document.getElementById("li1").style.visibility='hidden';
-			document.getElementById("li2").style.visibility='hidden';
-			document.getElementById("li3").style.visibility='hidden';
-			document.getElementById("li4").style.visibility='hidden';
-			document.getElementById("li5").style.visibility='hidden';
-			document.getElementById("li7").style.visibility='hidden';
+			$screen.css('background-color', '#777777');
+			$tamaPic.src = './img/chars/0'+state+'/sleep.gif';
+			$("li1").css('visibility', 'hidden');
+			$("li2").css('visibility', 'hidden');
+			$("li3").css('visibility', 'hidden');
+			$("li4").css('visibility', 'hidden');
+			$("li5").css('visibility', 'hidden');
+			$("li7").css('visibility', 'hidden');
 			tamaControls.lights = false;
 		}
 		else
 		{
-			document.getElementById('screen').style.backgroundColor = '#fff';
-			document.getElementById('tamapic').src = './img/chars/0'+state+'/main.gif';
-			document.getElementById("li1").style.visibility='visible';
-			document.getElementById("li2").style.visibility='visible';
-			document.getElementById("li3").style.visibility='visible';
-			document.getElementById("li4").style.visibility='visible';
-			document.getElementById("li5").style.visibility='visible';
-			document.getElementById("li7").style.visibility='visible';
+			$screen.css('background-color', '#fff');
+			$tamaPic.src = './img/chars/0'+state+'/main.gif';
+			$("li1").css('visibility', 'visible');
+			$("li2").css('visibility', 'visible');
+			$("li3").css('visibility', 'visible');
+			$("li4").css('visibility', 'visible');
+			$("li5").css('visibility', 'visible');
+			$("li7").css('visibility', 'visible');
 			tamaControls.lights = true;
 		}
 	},
@@ -214,11 +215,11 @@ var tamaControls =
 		{
 			if(animation)
 			{
-				document.getElementById('tamapic').src = './img/chars/0'+tamaVars.state+'/'+state+'.gif';
+				$tamaPic.src = './img/chars/0'+tamaVars.state+'/'+state+'.gif';
 				tamaVars.busy = true;
 				setTimeout(function()
 				{
-					document.getElementById('tamapic').src = './img/chars/0'+tamaVars.state+'/main.gif';
+					$tamaPic.src = './img/chars/0'+tamaVars.state+'/main.gif';
 					tamaVars.busy = false;
 				}, time);
 			}
@@ -227,13 +228,13 @@ var tamaControls =
 				switch(state)
 				{
 					case -2:
-						document.getElementById('tamapic').src = './img/chars/death/main.gif';
+						$tamaPic.src = './img/chars/death/main.gif';
 						break;
 					case -1:
-						document.getElementById('tamapic').src = './img/chars/00/main.gif';
+						$tamaPic.src = './img/chars/00/main.gif';
 						break;
 					case 0:
-						document.getElementById('tamapic').src = './img/chars/00/hach.gif';
+						$tamaPic.src = './img/chars/00/hach.gif';
 						break;
 					default:
 						if(tamaVars.sick)
@@ -241,12 +242,12 @@ var tamaControls =
 							if(state == 'sick')
 							{
 								state = tamaVars.state;
-								document.getElementById('tamapic').src = './img/chars/0'+state+'/sick.gif';
+								$tamaPic.src = './img/chars/0'+state+'/sick.gif';
 							}
 							else
 							{
 								state = tamaVars.state;
-								document.getElementById('tamapic').src = './img/chars/0'+state+'/main.gif';
+								$tamaPic.src = './img/chars/0'+state+'/main.gif';
 							}
 							
 						}
@@ -255,17 +256,17 @@ var tamaControls =
 							if(state == 'unhp')
 							{
 								state = tamaVars.state;
-								document.getElementById('tamapic').src = './img/chars/0'+state+'/unhp.gif';
+								$tamaPic.src = './img/chars/0'+state+'/unhp.gif';
 							}
 							else
 							{
 								state = tamaVars.state;
-								document.getElementById('tamapic').src = './img/chars/0'+state+'/main.gif';
+								$tamaPic.src = './img/chars/0'+state+'/main.gif';
 							}
 						}
 						else
 						{
-							document.getElementById('tamapic').src = './img/chars/0'+state+'/main.gif';
+							$tamaPic.src = './img/chars/0'+state+'/main.gif';
 						}
 						break;
 				}
@@ -279,9 +280,10 @@ var tamaControls =
 	{
 		switch(type)
 		{
+			// FIXME: Get rid of setTimeout! Use requestAnimationFrame instead!
 			case 'food':
 				buffer = "<img class=\"food\" src=\"./img/other/food.gif\" />";
-				document.getElementById('screen').innerHTML += buffer;
+				$screen.append(buffer);
 				if(time)
 				{
 					setTimeout(function(){$('.food').remove()}, time);
@@ -289,20 +291,20 @@ var tamaControls =
 				break;
 			case 'snack':
 				buffer = "<img class=\"food\" src=\"./img/other/snack.gif\" />";
-				document.getElementById('screen').innerHTML += buffer;
+				$screen.append(buffer);
 				setTimeout(function(){$('.food').remove()}, time);
 				break;
 			case 'play': 
 				buffer = "<img id=\"stars1\" class=\"play\" src=\"./img/other/stars.gif\" />"
 				buffer += "<img id=\"stars2\" class=\"play\" src=\"./img/other/stars.gif\" />"
-				document.getElementById('screen').innerHTML += buffer;
+				$screen.append(buffer);
 				setTimeout(function(){$('.play').remove()}, time);
 				break;
 			case 'sick':
 				if(time >= 0)
 				{
 					buffer = "<img class=\"skull\" src=\"./img/other/skull.gif\" />"
-					document.getElementById('screen').innerHTML += buffer;
+					$screen.append(buffer);
 				}
 				else
 				{
@@ -404,13 +406,13 @@ var tama =
 		{
 			tamaVars.busy = true;
 			tamaVars.water = 210;
-			document.getElementById('water').style.left = tamaVars.water+'px';
+			$water.css('left', tamaVars.water+'px');
 		}
 		{
 			if(tamaVars.water >= -50)
 			{
 				tamaVars.water -= 5
-				document.getElementById('water').style.left = tamaVars.water+'px';
+				$water.css('left', tamaVars.water+'px');
 				if(tamaVars.water == -50)
 				{
 					tamaVars.busy = false;
@@ -460,7 +462,7 @@ var tama =
 	dung:function()
 	{
 		buffer = "<img class=\"dung\" style=\"top: "+Math.floor((Math.random()*(200-13))+1)+"px; left: "+Math.floor((Math.random()*(200-13))+1)+"px;\" src=\"./img/other/dung.gif\" />";
-		document.getElementById('screen').innerHTML += buffer;
+		$screen.append(buffer);
 		tamaVars.dung++;
 		tamaVars.utp = 0;
 	},
@@ -515,8 +517,8 @@ var tama =
 		{
 			tamaControls.evolve(-2);
 			tama.clock.stop();
-			document.getElementById('defeat').style.display = 'block';
-			document.getElementById('time').innerHTML = Math.round(tama.counter/(1000/loopTime));
+			$('#defeat').css('display', 'block');
+			$('#time').html(Math.round(tama.counter/(1000/loopTime)));
 		}
 	}
 }

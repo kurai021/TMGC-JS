@@ -10,16 +10,28 @@
         "128": "/img/logo-128.png"
     },
     "developer": {
-        "name": "Richard Armuelles",
-        "url": "http://www.alswblog.org"
+        "name": "?",
+        "url": "?"
     },
     "installs_allowed_from": ["*"],
     "locales": {
         "en": {
             "description": "A basic Tamagotchi simulator",
             "developer": {
-                "name": "Richard Armuelles",
-                "url": "http://www.alswblog.org"
+                "name": "?",
+                "url": "?"
+            }
+        "de": {
+            "description": "Ein einfacher Tamagotchi-Simulator",
+            "developer": {
+                "name": "?",
+                "url": "?"
+            }
+        "es": {
+            "description": "Un simulador Tamagotchi básico",
+            "developer": {
+                "name": "?",
+                "url": "?"
             }
         }
     },

@@ -1,0 +1,42 @@
+{
+    "version": "0.2",
+    "name": "TMGC-JS",
+    "description": "A basic Tamagotchi simulator",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/img/logo-16.png",
+        "48": "/img/logo-48.png",
+        "60": "/img/logo-60.png",
+        "128": "/img/logo-128.png"
+    },
+    "developer": {
+        "name": "?",
+        "url": "?"
+    },
+    "installs_allowed_from": ["*"],
+    "locales": {
+        "en": {
+            "description": "A basic Tamagotchi simulator",
+            "developer": {
+                "name": "?",
+                "url": "?"
+            }
+        "de": {
+            "description": "Ein einfacher Tamagotchi-Simulator",
+            "developer": {
+                "name": "?",
+                "url": "?"
+            }
+        "es": {
+            "description": "Un simulador Tamagotchi básico",
+            "developer": {
+                "name": "?",
+                "url": "?"
+            }
+        }
+    },
+    "default_locale": "en",
+    "permissions": {     
+    },
+    "fullscreen": "true"
+}

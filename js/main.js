@@ -215,11 +215,11 @@ var tamaControls =
 		{
 			if(animation)
 			{
-				$('#tamapic').src = './img/chars/0'+tamaVars.state+'/'+state+'.gif';
+				$tamaPic.src = './img/chars/0'+tamaVars.state+'/'+state+'.gif';
 				tamaVars.busy = true;
 				setTimeout(function()
 				{
-					$('#tamapic').src = './img/chars/0'+tamaVars.state+'/main.gif';
+					$tamaPic.src = './img/chars/0'+tamaVars.state+'/main.gif';
 					tamaVars.busy = false;
 				}, time);
 			}
@@ -228,13 +228,13 @@ var tamaControls =
 				switch(state)
 				{
 					case -2:
-						$('#tamapic').src = './img/chars/death/main.gif';
+						$tamaPic.src = './img/chars/death/main.gif';
 						break;
 					case -1:
-						$('#tamapic').src = './img/chars/00/main.gif';
+						$tamaPic.src = './img/chars/00/main.gif';
 						break;
 					case 0:
-						$('#tamapic').src = './img/chars/00/hach.gif';
+						$tamaPic.src = './img/chars/00/hach.gif';
 						break;
 					default:
 						if(tamaVars.sick)
@@ -242,12 +242,12 @@ var tamaControls =
 							if(state == 'sick')
 							{
 								state = tamaVars.state;
-								$('#tamapic').src = './img/chars/0'+state+'/sick.gif';
+								$tamaPic.src = './img/chars/0'+state+'/sick.gif';
 							}
 							else
 							{
 								state = tamaVars.state;
-								$('#tamapic').src = './img/chars/0'+state+'/main.gif';
+								$tamaPic.src = './img/chars/0'+state+'/main.gif';
 							}
 							
 						}
@@ -256,17 +256,17 @@ var tamaControls =
 							if(state == 'unhp')
 							{
 								state = tamaVars.state;
-								$('#tamapic').src = './img/chars/0'+state+'/unhp.gif';
+								$tamaPic.src = './img/chars/0'+state+'/unhp.gif';
 							}
 							else
 							{
 								state = tamaVars.state;
-								$('#tamapic').src = './img/chars/0'+state+'/main.gif';
+								$tamaPic.src = './img/chars/0'+state+'/main.gif';
 							}
 						}
 						else
 						{
-							$('#tamapic').src = './img/chars/0'+state+'/main.gif';
+							$tamaPic.src = './img/chars/0'+state+'/main.gif';
 						}
 						break;
 				}

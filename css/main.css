@@ -42,17 +42,15 @@ body
 .menu ul li img
 {
 	display: block;
-	width: 35px;
-	height: 35px;
-	line-height : 50px;
+	width: 50%;
+	height: 80%;
 	position: relative;
-	top: 60%;
+	top: 50%;
 	left: 50%;
-	margin: -25px 0 0 -25px;
+	margin: -25% 0 0 -25%;
 	vertical-align: middle;
 	cursor: pointer;
 }
-
 header
 {	
 	border-bottom: 1px solid silver;
@@ -83,25 +81,24 @@ section
 	display:none;
 	text-align: center;
 	font-weight: bold;
-	font-size: : 15px;
+	font-size: 15px;
 	color : #700;
 }
 #tamapic
 {
 	float:left;
 	position:absolute;
-	top:60%;
-	left:40%;
-	width : 25px;
-	height: 25px;
+	top:50%;
+	left:50%;
+	width : 70px;
+	height: 70px;
 	line-height: 70px;
 	text-align: center;
+	margin-left: -35px;
 	margin-top: -35px;
-	margin-left: auto;
-	margin-right: auto;
+	vertical-align: middle
 }
-#water
-{
+#water{
 	float:left;
 	position:absolute;
 	top:0;
@@ -170,11 +167,8 @@ footer
 	border-top: none;
 	border-radius: 0 0 5px 5px;
 	top: 11%;
-<<<<<<< HEAD
-	left: 8%;
-=======
+	/*left: 8%;*/
 	left: 18%;
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 
 }
 #li1-content
@@ -183,11 +177,8 @@ footer
 	border-top: none;
 	border-radius: 0 0 5px 5px;
 	top: 11%;
-<<<<<<< HEAD
-	left: 8%;
-=======
+	/*left: 8%;*/
 	left: 38%;
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 }
 #li4-content
 {	
@@ -195,11 +186,8 @@ footer
 	margin-bottom : -4px;
 	border-bottom: none;
 	border-radius: 5px 5px 0 0;
-<<<<<<< HEAD
-	left: 8%;
-=======
+	/*left: 8%;*/
 	left: 18%;
->>>>>>> 2a85e625edace9238acf648001197a7a72861085
 }
 
 fieldset 

@@ -1,16 +1,15 @@
-* 
-{
+* {
 	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
 	margin:0;
 	padding:0;
 }
-body
-{
+
+body {
 	height: 100%;
 	background-color: #1c1c1c;
 }
-#container
-{
+
+#container {
 	width: 90%;
 	height: 96%;
 	position: absolute;
@@ -19,19 +18,19 @@ body
 	border: 1px solid silver;
 	border-radius: 5px;
 }
-.menu
-{
+
+.menu {
 	position: absolute;
 	height: 10%;
 	width: 100%;
 }
-.menu ul
-{
+
+.menu ul {
 	text-align: center;
 	height : 100%;
 }
-.menu ul li
-{
+
+.menu ul li {
 	position: relative;
 	display: inline-block;
 	margin: 0 auto;
@@ -39,8 +38,8 @@ body
 	height: 100%;
 	vertical-align: middle;
 }
-.menu ul li img
-{
+
+.menu ul li img {
 	display: block;
 	width: 50%;
 	height: 80%;
@@ -51,19 +50,20 @@ body
 	vertical-align: middle;
 	cursor: pointer;
 }
-header
-{	
+
+header {	
 	border-bottom: 1px solid silver;
 	z-index: 1;
 }
-section
-{
+
+section {
 	position: absolute;
 	top: 10%;
 	height: 80%;
 	width : 100%;
 	background-color: #696969;
 }
+
 #screen {
 	background-color: #fff;
 	width: 200px;
@@ -77,6 +77,7 @@ section
 	line-height: 200px;
 	overflow: hidden;
 }
+
 #defeat {
 	display:none;
 	text-align: center;
@@ -84,8 +85,8 @@ section
 	font-size: 15px;
 	color : #700;
 }
-#tamapic
-{
+
+#tamapic {
 	float:left;
 	position:absolute;
 	top:50%;
@@ -98,21 +99,22 @@ section
 	margin-top: -35px;
 	vertical-align: middle
 }
-#water{
+
+#water {
 	float:left;
 	position:absolute;
 	top:0;
 	left:-50px;
 }
-.dung
-{
+
+.dung {
 	float: left;
 	position: absolute;
 	width: 17px;
 	height: 17px;
 }
-.food
-{
+
+.food {
 	float: left;
 	position: absolute;
 	top : 50%;
@@ -120,13 +122,13 @@ section
 	margin-top : -8px;
 	margin-left: -8px;
 }
-.play
-{
+
+.play {
 	float: left;
 	position: absolute;
 }
-.skull
-{
+
+.skull {
 	float: left;
 	position: absolute;
 	top : 40%;
@@ -134,24 +136,24 @@ section
 	margin-top : -7px;
 	margin-left: -7px;
 }
-#stars1
-{
+
+#stars1 {
 	top:20px;
 	left: 10px;
 }
-#stars2
-{
+
+#stars2 {
 	top: 20px;
 	left: 160px;
 }
-footer
-{
+
+footer {
 	bottom:0;
 	border-top: 1px solid silver;
 	z-index: 1;
 }
-.li-content
-{
+
+.li-content {
 	color : silver;
 	display: none;
 	position: fixed;
@@ -161,54 +163,54 @@ footer
 	border : 1px solid silver;
 	z-index : 10;
 }
-#li0-content
-{
+
+#li0-content {
 	margin-top : -2px;
 	border-top: none;
 	border-radius: 0 0 5px 5px;
 	top: 11%;
-	/*left: 8%;*/
-	left: 18%;
+	left: 8%;
 
 }
-#li1-content
-{
+
+#li1-content {
 	margin-top : -2px;
 	border-top: none;
 	border-radius: 0 0 5px 5px;
 	top: 11%;
-	/*left: 8%;*/
-	left: 38%;
+	left: 8%;
 }
-#li4-content
-{	
+
+#li4-content {	
 	bottom: 13%;
 	margin-bottom : -4px;
 	border-bottom: none;
 	border-radius: 5px 5px 0 0;
-	/*left: 8%;*/
-	left: 18%;
+	left: 8%;
 }
 
-fieldset 
-{
+fieldset {
 
 	padding: 10px 7px 10px 7px;
 	margin: 2px;
 	width : 90%;
 }
-label 
-{
+
+label {
 	display: inline-block;
 	width: 100px;
 	text-align: right;
 }
-legend
-{
+
+legend {
 	color: white;
 	padding: 7px 5px 7px 5px;
 }
-.ui-progressbar
-{
+
+.ui-progressbar {
 	height: 7px;
+}
+
+@media screen and (orientation:landscape) {
+  .menu ul li img {top: 90%; width: 40%; height: 70%;}
 }

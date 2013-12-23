@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css/jquery-ui.css" media="screen" />
 		<link rel="stylesheet" href="css/main.css" media="screen" />
 	</head>
@@ -59,6 +59,7 @@
 					<legend>Save/Load</legend>
 					<button id="load">Load</button>
 					<button id="save">Save</button>
+					<button id="help">help</button>
 				</fieldset>
 			</div>	
 			<div id="li1-content" class="li-content">
@@ -75,11 +76,17 @@
 					<input type="button" id="punish" value="Punish" /><br/>
 				</fieldset>
 			</div>
+			<div id="li8-content" class="li-content">
+				<fieldset>
+					<legend>{{legend}}</legend>
+					<strong>{{title1}}</strong><br>
+					<p>{{help}}</p>
+				</fieldset>
+			</div>
 		</nav>
 	
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="js/helper/async_storage.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/initialisation.js"></script>
 	</body>

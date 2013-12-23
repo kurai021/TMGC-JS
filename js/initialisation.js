@@ -3,25 +3,25 @@ $(document).ready( function() {
 		var id = $(this).parent()[0].id;
 		switch(id) {
 			case 'li0':
-				$(this).bind('mouseup', function(e){ tamaControls.HungerMeter();});
+				$(this).bind('mousedown', function(e){ tamaControls.HungerMeter();});
 				break;
 			case 'li1':
-				$(this).bind('mouseup', function(e){ tamaControls.FeedingTime();});
+				$(this).bind('mousedown', function(e){ tamaControls.FeedingTime();});
 				break;
 			case 'li2':
-				$(this).bind('mouseup', function(e){ tamaControls.Toilet();});
+				$(this).bind('mousedown', function(e){ tamaControls.Toilet();});
 				break;
 			case 'li3':
-				$(this).bind('mouseup', function(e){ tamaControls.GamingTime();});
+				$(this).bind('mousedown', function(e){ tamaControls.GamingTime();});
 				break;
 			case 'li4':
-				$(this).bind('mouseup', function(e){ tamaControls.Discipline();});
+				$(this).bind('mousedown', function(e){ tamaControls.Discipline();});
 				break;
 			case 'li5':
-				$(this).bind('mouseup', function(e){ tamaControls.Health();});
+				$(this).bind('mousedown', function(e){ tamaControls.Health();});
 				break;
 			case 'li6':
-				$(this).bind('mouseup', function(e){ tamaControls.Lights();});
+				$(this).bind('mousedown', function(e){ tamaControls.Lights();});
 				break;
 		}
 	})
@@ -30,4 +30,24 @@ $(document).ready( function() {
 	$('#food').bind('mouseup', function() { tamaControls.FeedingTime('food') });
 	$('#praise').bind('mouseup', function() { tamaControls.Discipline('praise') });
 	$('#punish').bind('mouseup', function() { tamaControls.Disciplines('punish') });
+});
+
+$(function() {
+        $( "#load" ).click(function() {
+                var tamaLoad = localStorage.getItem("tamaVars");
+                tamaVars = JSON.parse(tamaLoad); //var test is now re-loaded!
+        });
+});
+
+$(function() {
+        $( "#save" ).click(function() {
+                localStorage.setItem('tamaVars', JSON.stringify(tamaVars));
+        });
+});
+
+$(function() {
+	$( "#help" ).on('mousedown', function() {
+		$("#li8-content").toggle();
+		$("#li0-content").toggle();
+	});
 });

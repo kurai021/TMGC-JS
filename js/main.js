@@ -5,40 +5,27 @@ var $tamaPic = $('#tamapic');
 var $screen  = $('#screen');
 var tamaVars =
 {
-	hunger:             50,
-	happyness:          50,
-	diabetes:            0,
-	illness:             0,
-	insalubrity:         0,
-	utp:                 0,// What?!
-	training:            0,
-	age:                 1,
-	weight:            100,
-	name:          'Itchy',
-	gender:          'Boy',
-	generation:          1,
-	state:              -1,
-	animation:      'main',
-	busy:            false,
-	doingbullshit:       0,
-	tidy:             true,
-	water:             -50,
-	dung:                0,
-	sick:            false
+		hunger: 50,
+        happyness: 50,
+        diabetes: 0,
+        illness: 0,
+        insalubrity: 0,
+        utp: 0, //What?
+        training: 0,
+        age: 1,
+        weight: 100,
+        name: 'bouh',
+        gender: 'Boy',
+        generation: 1,
+        state: -1,
+        animation: 'main',
+        busy: false,
+        doingbullshit: 0,
+        tidy: true,
+        water:-50,
+        dung:0,
+        sick: false
 }
-
-$(function() {
-	$( "#load" ).on('click', function() {
-		var tamaLoad = asyncStorage.getItem("tamaVars");
-		tamaVars = JSON.parse(tamaLoad);
-	});
-});
-
-$(function() {
-	$( "#save" ).on('click', function() {
-		asyncStorage.setItem('tamaVars', JSON.stringify(tamaVars));
-	});
-});
 
 var tamaRules =
 {

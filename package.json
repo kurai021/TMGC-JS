@@ -1,0 +1,29 @@
+{
+  "name": "TMGC",
+  "version": "0.1.0",
+  "description": "A little Tamagotchi Simulator for Firefox OS",
+  "main": "/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kurai021/TMGC-JS.git"
+  },
+  "keywords": [
+    "TMGC",
+    "Firefox",
+    "OS",
+    "App"
+  ],
+  "author": "Richard Armuelles, André Jaenisch",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/kurai021/TMGC-JS/issues"
+  },
+  "homepage": "https://github.com/kurai021/TMGC-JS",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.4.0"
+  }
+}

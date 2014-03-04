@@ -24,6 +24,7 @@
   "homepage": "https://github.com/kurai021/TMGC-JS",
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-uglify": "~0.4.0"
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }

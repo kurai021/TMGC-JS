@@ -12,10 +12,17 @@ module.exports = function(grunt) {
         dest: 'build/js/main.min.js'
       }
     }
+  watch: {
+    options: {
+      livereload: true,
+    },
+  }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  // Load the plugin that provides the "options.livereload" task.
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
   grunt.registerTask('default', ['uglify']);

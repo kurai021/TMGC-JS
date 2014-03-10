@@ -1,4 +1,15 @@
+'use strict';
+
+var LIVERELOAD_PORT = 9000;
+var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
+var mountFolder = function (connect, dir) {
+      return connect.static(require('path').resolve(dir));
+};
+
 module.exports = function(grunt) {
+
+  // load all grunt tasks
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Project configuration.
   grunt.initConfig({
@@ -11,20 +22,56 @@ module.exports = function(grunt) {
         src: 'src/js/main.js',
         dest: 'build/js/main.min.js'
       }
-    }
-  watch: {
-    options: {
-      livereload: true,
     },
-  }
+
+    watch: {
+      options: {
+        nospawn: true
+      },
+      livereload: {
+        options: {
+          livereload: LIVERELOAD_PORT
+        },
+        files: [
+          'src/*.html',
+          'src/css/*.css',
+          'src/js/*.js',
+	  'src/img/*.{png,gif}'
+        ],
+      },
+    },
+
+    connect: {
+      options: {
+        hostname: 'localhost',
+        port: 8000,
+      },
+      livereload: {
+        options: {
+          middleware: function (connect) {
+            return [
+              mountFolder(connect, 'src'),
+              lrSnippet
+            ];
+          }
+        }
+      }
+    },
+
+    open: {
+      server: {
+        path: 'http://localhost:<%= connect.options.port %>'
+      }
+    }
   });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  // Load the plugin that provides the "options.livereload" task.
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
-
+  grunt.registerTask('default', ['uglify','watch']);
+  grunt.registerTask('server', function (target) {
+    grunt.task.run([
+      'connect:livereload',
+      'open',
+      'watch'
+    ]);
+  });
 };

@@ -10,22 +10,24 @@ body {
 }
 
 #app {
-	position: absolute;
-	top: 0;
-	left: 0.5625em;
-	width: 18.75em;
-	height: 18.75em;
-	margin: 5.625em auto;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	border: 1px solid silver;
+	border-radius: 5px;
 }
 
 #container {
 	border: 0.0625em solid silver;
 	border-radius: 0.3125em;
+	width: 100%;
+	height: 100%;
 }
 
 .menu {
-	height: 1.875em;
+	position: absolute;
 	width: 100%;
+	height: 10%
 }
 
 .menu ul {
@@ -34,8 +36,10 @@ body {
 }
 
 .menu ul li {
+	position: relative;
 	display: inline-block;
 	margin: 0 auto;
+	width: 22%;
 	height: 100%;
 	vertical-align: middle;
 }
@@ -43,29 +47,73 @@ body {
 
 .menu ul li img {
 	display: block;
-	width: 1.5em;
-	height: 1.5em;
-	margin: 0.1875em 1.125em;
+	width: 10vw;
+	height: 8vh;
+	line-height : 50px;
+	position: relative;
+	top: 60%;
+	left: 60%;
+	margin: -25px 0 0 -25px;
 	vertical-align: middle;
 	cursor: pointer;
 }
 
+@media screen and (min-width: 360px) {
+.menu ul li img {top: 50%; width: 40%; height: 70%;}
+}
+
+@media screen and (min-width: 480px) {
+.menu ul li img {top: 90%; width: 30%; height: 70%;}
+}
+
+@media screen and (min-width: 600px) {
+.menu ul li img {top: 35%; width: 25%; height: 70%;}
+}
+
+@media screen and (min-width: 640px) {
+.menu ul li img {top: 90%; width: 25%; height: 70%;}
+}
+
+@media screen and (min-width: 768px) {
+.menu ul li img {top: 40%; width: 30%; height: 70%;}
+}
+
+@media screen and (min-width: 800px) {
+.menu ul li img {top: 30%; width: 35%; height: 70%;}
+}
+
+@media screen and (min-width: 1024px) {
+.menu ul li img {top: 50%; width: 30%; height: 70%;}
+}
+
+@media screen and (min-width: 1280px) {
+.menu ul li img {top: 50%; width: 30%; height: 70%;}
+}
+
 header {	
-	border-bottom: 0.0625em solid silver;
+	border-bottom: 1px solid silver;
 	z-index: 1;
 }
 
 section {
-	height: 15em;
-	width: 100%;
+	position: absolute;
+	top: 10%;
+	height: 80%;
+	width : 100%;
 	background-color: #696969;
 }
 
 #screen {
 	background-color: #fff;
-	width: 18.625em;
-	height: 15em;
-	border: 0.0625em solid black;
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top: -100px;
+	margin-left: -100px;
+	line-height: 200px;
 	overflow: hidden;
 }
 
@@ -73,36 +121,58 @@ section {
 	display:none;
 	text-align: center;
 	font-weight: bold;
-	font-size: 0.9375em;
+	font-size: 15px;
 	color : #700;
 }
 
-#tamapic {
-	float: right;
-	width : 1.875em;
-	height: 1.875em;
-	margin: 6.5625em 8.4375em;
+#img{
+	float:left;
+	position:absolute;
+	top:50%;
+	left:50%;
+	width : 70px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	margin-left: -35px;
+	margin-top: -35px;
 }
 
-#water {
+#water{
 	float:left;
-	margin: 1.25em 0;
 	position:absolute;
-	left:-1.25em;
+	top:0;
+	left:-50px;
+}
+
+#tamapic{
+	vertical-align: middle;
+	float:left;
+	position:absolute;
+	top:60%;
+	left:60%;
+	width : 30px;
+	height: 30px;
+	line-height: 70px;
+	text-align: center;
+	margin-left: -35px;
+	margin-top: -35px;
 }
 
 .dung {
+	float: left;
 	position: absolute;
 	width: 17px;
 	height: 17px;
 }
 
 .food {
+	float: left;
 	position: absolute;
 	top : 50%;
 	left: 40%;
-	margin-top : -0.5em;
-	margin-left: -0.5em;
+	margin-top : -8px;
+	margin-left: -8px;
 }
 
 .play {
@@ -111,77 +181,81 @@ section {
 }
 
 .skull {
+	float: left;
 	position: absolute;
 	top : 40%;
 	left : 60%;
-	margin-top : -0.4375em;
-	margin-left: -0.4375em;
+	margin-top : -7px;
+	margin-left: -7px;
 }
 
 #stars1 {
-	top: 4.2em;
-	left: 6.2em;
+	top:20px;
+	left: 10px;
 }
 
 #stars2 {
-	top: 4.2em;
-	left: 12.4em;
+	top: 20px;
+	left: 160px;
 }
 
 footer {
 	bottom:0;
-	border-top: 0.0625em solid silver;
+	border-top: 1px solid silver;
 	z-index: 1;
 }
 
-#navigation {
-	position: absolute;
-	width: 18.75em;
-	height: 15em;
-	top: 2em;
-}
-
 .li-content {
-	color: silver;
+	color : silver;
 	display: none;
+	position: fixed;
 	background-color : #1c1c1c;
-	width: 15.625em;
-	padding: 0.4375em;
-	border: 0.0625em solid silver;
-	z-index: 10;
+	width: 250px;
+	padding : 7px;
+	border : 1px solid silver;
+	z-index : 10;
 }
 
-.header-nav {
+#li0-content {
+	margin-top : -2px;
 	border-top: none;
-	border-radius: 0 0 0.3125em 0.3125em;
+	border-radius: 0 0 5px 5px;
+	top: 11%;
 }
 
-.footer-nav {
+#li1-content {
+	margin-top : -2px;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	top: 11%;
+	left: 8%;
+}
+
+#li4-content {	
+	bottom: 13%;
+	margin-bottom : -4px;
 	border-bottom: none;
-	border-radius: 0.3125em 0.3125em 0 0;
+	border-radius: 5px 5px 0 0;
+	left: 8%;
 }
 
 fieldset {
-	padding: 0.625em 0.4375em 0.625em 0.4375em;
-	margin: 0.125em;
+	padding: 10px 7px 10px 7px;
+	margin: 2px;
 	width : 90%;
 }
 
 label {
 	display: inline-block;
-	width: 6.25em;
+	width: 100px;
 	text-align: right;
 }
 
 legend {
 	color: white;
-	padding: 0.4375em 0.3125em 0.4375em 0.3125em;
+	padding: 7px 5px 7px 5px;
 }
 
 .ui-progressbar {
-	height: 0.4375em;
+	height: 7px;
 }
-/*
-@media screen and (orientation:landscape) {
-  .menu ul li img {top: 90%; width: 40%; height: 70%;}
-}*/

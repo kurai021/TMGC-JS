@@ -31,5 +31,8 @@
     "grunt-open": "~0.2.3",
     "matchdep": "~0.3.0",
     "connect-livereload": "~0.3.2"
+  },
+  "dependencies": {
+    "grunt": "~0.4.3"
   }
 }

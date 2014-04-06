@@ -2,30 +2,30 @@
     "version": "0.2",
     "name": "TMGC-JS",
     "description": "A basic Tamagotchi simulator",
-    "launch_path": "/index.html",
+    "launch_path": "/build/index.html",
     "icons": {
-        "16": "/img/logo-16.png",
-        "48": "/img/logo-48.png",
-        "60": "/img/logo-60.png",
-        "128": "/img/logo-128.png"
+        "16": "/build/img/logo-16.png",
+        "48": "/build/img/logo-48.png",
+        "60": "/build/img/logo-60.png",
+        "128": "/build/img/logo-128.png"
     },
     "developer": {
-        "name": "?",
-        "url": "?"
+        "name": "Richard Armuelles, André Jaenisch",
+        "url": "http://github.com/kurai021/TMGC-JS.git"
     },
     "installs_allowed_from": ["*"],
     "locales": {
         "en": {
             "description": "A basic Tamagotchi simulator",
             "developer": {
-                "name": "?",
+                "name": "Richard Armuelles, André Jaenisch",
                 "url": "?"
             }
         },
         "de": {
             "description": "Ein einfacher Tamagotchi-Simulator",
             "developer": {
-                "name": "?",
+                "name": "André Jaenisch",
                 "url": "?"
             }
         },

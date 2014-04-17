@@ -1,5 +1,5 @@
 $(document).ready( function() {
-	$('li img').each(function() {
+	$('li i').each(function() {
 		var id = $(this).parent()[0].id;
 		switch(id) {
 			case 'li0':

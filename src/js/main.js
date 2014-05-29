@@ -1,4 +1,4 @@
-var k = 1/1000;
+var k = 1/10000;
 var loopTime = 0.01*1000;// = 10 ms
 var $water   = $('#water');
 var $tamaPic = $('#tamapic');
@@ -91,20 +91,21 @@ var tamaControls =
 		{
 			if(type == 'food')
 			{
-				tama.add('hunger', 20);
-				tama.add('utp', 20);
-				tama.add('weight', 10, true);
+				tama.add('hunger', 10);
+				tama.add('utp', 10);
+				tama.add('weight', 5, true);
+                tama.add('happyness', 10);
 
 				// According to conventions, it should be addSprites …
 				tamaControls.addsprites('food', 2000);
 			}
 			else if(type == 'snack')
 			{
-				tama.add('hunger', 10);
-				tama.add('utp', 20);
-				tama.add('weight', 12.5, true);
+				tama.add('hunger', 5);
+				tama.add('utp', 5);
+				tama.add('weight', 2.5, true);
 				tama.add('happyness', 5);
-				tama.add('diabetes', 12.5);
+				tama.add('diabetes', 2.5);
 
 				tamaControls.addsprites('snack', 2000);
 			}
@@ -128,10 +129,10 @@ var tamaControls =
 		{
 			tamaControls.evolve('play', true, 6000);
 			tamaControls.addsprites('play', 6000);
-			tama.add('hunger', -20);
-			tama.add('weight', -10, true);
-			tama.add('happyness', 10);
-			tama.add('training', 6.25);
+			tama.add('hunger', -10);
+			tama.add('weight', -5, true);
+			tama.add('happyness', 5);
+			tama.add('training', 3.25);
 		}
 			
 	},
@@ -140,7 +141,7 @@ var tamaControls =
 		if(tamaVars.state >= 1)
 		{
 			tamaVars.doingbullshit = 0;
-			tama.add('training', 10);
+			tama.add('training', 5);
 		}
 	},
 	Health: function()
@@ -157,24 +158,24 @@ var tamaControls =
 		{
 			$screen.css('background-color', '#777777');
 			$tamaPic.attr('src', 'img/chars/0'+state+'/sleep.gif');
-			$("li1").css('visibility', 'hidden');
-			$("li2").css('visibility', 'hidden');
-			$("li3").css('visibility', 'hidden');
-			$("li4").css('visibility', 'hidden');
-			$("li5").css('visibility', 'hidden');
-			$("li7").css('visibility', 'hidden');
+			$("#li1").toggle();
+			$("#li2").toggle();
+			$("#li3").toggle();
+			$("#li4").toggle();
+			$("#li5").toggle();
+			$("#li7").toggle();
 			tamaControls.lights = false;
 		}
 		else
 		{
 			$screen.css('background-color', '#fff');
 			$tamaPic.attr('src', 'img/chars/0'+state+'/main.gif');
-			$("li1").css('visibility', 'visible');
-			$("li2").css('visibility', 'visible');
-			$("li3").css('visibility', 'visible');
-			$("li4").css('visibility', 'visible');
-			$("li5").css('visibility', 'visible');
-			$("li7").css('visibility', 'visible');
+			$("#li1").toggle();
+			$("#li2").toggle();
+			$("#li3").toggle();
+			$("#li4").toggle();
+			$("#li5").toggle();
+			$("#li7").toggle();
 			tamaControls.lights = true;
 		}
 	},
@@ -351,7 +352,6 @@ var tama =
 		this.beingsick();
 		this.doingbullshit();
 		this.dead();
-
 	},
 	add: function(prop, value, nolimit)
 	{

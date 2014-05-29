@@ -150,7 +150,7 @@ section {
 	overflow: hidden;
 }
 
-#defeat, #time, #seconds {
+#defeat, #time, #seconds, #notifications {
 	display:none;
 	text-align: center;
 	font-weight: bold;

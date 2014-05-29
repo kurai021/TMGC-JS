@@ -504,8 +504,13 @@ var tama =
 		{
 			tamaControls.evolve(-2);
 			tama.clock.stop();
-			$('#defeat').css('display', 'block');
+			//$('#defeat').css('display', 'block');
 			$('#time').html(Math.round(tama.counter/(1000/loopTime)));
+            var defeat = document.getElementById("defeat");
+            var timedefeat = document.getElementById("time");
+            var seconds = document.getElementById("seconds");
+            
+            alert(defeat.textContent + ' ' + timedefeat.textContent + ' ' + seconds.textContent + '.');
 		}
 	}
 }

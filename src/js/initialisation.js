@@ -24,7 +24,7 @@ $(document).ready( function() {
 				$(this).bind('mousedown', function(e){ tamaControls.Lights();});
 				break;
 		}
-	})
+	});
 	tama.init();
 	$('#snack').bind('mouseup', function() { tamaControls.FeedingTime('snack') });
 	$('#food').bind('mouseup', function() { tamaControls.FeedingTime('food') });

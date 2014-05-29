@@ -25,10 +25,9 @@
 						<img id="tamapic" src="img/chars/00/main.gif" alt="Tamagotchi" />
 						<img id="water" src="img/other/water.gif" alt="" />
 					</div>
-					<p id="defeat" data-l10n-id="defeat">
-						Because of you, this lovely creature died. Shame on you ! <br />
-						It lived <span id="time"></span> seconds
-					</p>
+					<p id="defeat" data-l10n-id="defeat">Because of you, this lovely creature died. Shame on you ! It lived</p>
+                    <span id="time"></span>
+                    <p id="seconds">seconds</p>
 				</section>
 				<footer class="menu">
 					<ul>
@@ -64,7 +63,7 @@
 						<legend data-l10n-id="saveload">Save/Load</legend>
 						<button id="load" data-l10n-id="load">Load</button>
 						<button id="save" data-l10n-id="save">Save</button>
-						<button id="help" data-l10n-id="help">Help</button>
+						<!--<button id="help" data-l10n-id="help">Help</button>-->
 					</fieldset>
 				</div>	
 				<div id="li1-content" class="li-content header-nav">
@@ -81,21 +80,13 @@
 						<input type="button" id="punish" value="Punish" /><br/>
 					</fieldset>
 				</div>	
-<!--				<div id="li8-content" class="li-content header-nav">
-					<fieldset>
-						<legend data-l10n-id="legend">legend</legend>
-						<strong data-l10n-id="title1">title1</strong><br>
-						<p data-l10n-id="help">help</p>
-					</fieldset>
-				</div>
--->
 			</nav>
 		</div>
 		
-		<script type="text/javascript" src="bower_components/jQuery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/initialisation.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/initialisation.js"></script>
-		<script type="text/javascript" src="//localhost:35729/livereload.js"></script>
+		<!--<script type="text/javascript" src="//localhost:35729/livereload.js"></script>-->
 	</body>
 </html>

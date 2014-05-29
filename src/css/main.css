@@ -44,7 +44,6 @@ body {
 	vertical-align: middle;
 }
 
-
 .menu ul li i {
 	display: block;
 	font-size: 38px;
@@ -55,6 +54,11 @@ body {
 	margin: -25px 0 0 -25px;
 	vertical-align: middle;
 	cursor: pointer;
+}
+
+#load, #save{
+    width: 6rem;
+    height: 3rem;
 }
 
 @media screen and (min-width: 360px) {
@@ -146,7 +150,7 @@ section {
 	overflow: hidden;
 }
 
-#defeat {
+#defeat, #time, #seconds {
 	display:none;
 	text-align: center;
 	font-weight: bold;

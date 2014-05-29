@@ -2,12 +2,12 @@
     "version": "0.2",
     "name": "TMGC-JS",
     "description": "A basic Tamagotchi simulator",
-    "launch_path": "/build/index.html",
+    "launch_path": "/src/index.html",
     "icons": {
-        "16": "/build/img/logo-16.png",
-        "48": "/build/img/logo-48.png",
-        "60": "/build/img/logo-60.png",
-        "128": "/build/img/logo-128.png"
+        "16": "/src/img/logo-16.png",
+        "48": "/src/img/logo-48.png",
+        "60": "/src/img/logo-60.png",
+        "128": "/src/img/logo-128.png"
     },
     "developer": {
         "name": "Richard Armuelles, André Jaenisch",
@@ -25,20 +25,23 @@
         "de": {
             "description": "Ein einfacher Tamagotchi-Simulator",
             "developer": {
-                "name": "André Jaenisch",
+                "name": "Richard Armuelles, André Jaenisch",
                 "url": "?"
             }
         },
         "es": {
             "description": "Un simulador Tamagotchi básico",
             "developer": {
-                "name": "?",
+                "name": "Richard Armuelles, André Jaenisch",
                 "url": "?"
             }
         }
     },
     "default_locale": "en",
     "permissions": {
+        "desktop-notification" : {
+            "description": "Requerido para mostrar notificaciones"
+        }
     },
-    "fullscreen": "true"
+    "fullscreen": "false"
 }

@@ -1,8 +1,9 @@
-var k = 1/10000;
+var k = 1/5000;
 var loopTime = 0.01*1000;// = 10 ms
 var $water   = $('#water');
 var $tamaPic = $('#tamapic');
 var $screen  = $('#screen');
+var happydream = null;
 var tamaVars =
 {
 		hunger: 50,
@@ -24,7 +25,8 @@ var tamaVars =
         tidy: true,
         water:-50,
         dung:0,
-        sick: false
+        sick: false,
+        theme: 'default'
 }
 
 var tamaRules =
@@ -71,7 +73,8 @@ var tamaControls =
 		{
 			value: tamaVars.training
 		});
-		$('#trainingbar div, #happybar div, #hungerbar div').css({background: '#9CFF29'});
+        
+		$('#trainingbar div, #happybar div, #hungerbar div').css({background: '#01c5ed'});
 
 		$('#age').html(Math.floor(tamaVars.age) + ' years');
 		$('#weight').html(Math.round(tamaVars.weight) / 100 + ' g');
@@ -94,7 +97,6 @@ var tamaControls =
 				tama.add('hunger', 10);
 				tama.add('utp', 10);
 				tama.add('weight', 5, true);
-                tama.add('happyness', 10);
 
 				// According to conventions, it should be addSprites …
 				tamaControls.addsprites('food', 2000);
@@ -132,7 +134,7 @@ var tamaControls =
 			tama.add('hunger', -10);
 			tama.add('weight', -5, true);
 			tama.add('happyness', 5);
-			tama.add('training', 3.25);
+			tama.add('training', 0.5);
 		}
 			
 	},
@@ -141,7 +143,7 @@ var tamaControls =
 		if(tamaVars.state >= 1)
 		{
 			tamaVars.doingbullshit = 0;
-			tama.add('training', 5);
+			tama.add('training', 1);
 		}
 	},
 	Health: function()
@@ -153,7 +155,6 @@ var tamaControls =
 	},
 	Lights: function()
 	{
-		// FIXME Replace with a .toggle() on lights property
 		if(tamaControls.lights)
 		{
 			$screen.css('background-color', '#777777');
@@ -164,7 +165,8 @@ var tamaControls =
 			$("#li4").toggle();
 			$("#li5").toggle();
 			$("#li7").toggle();
-			tamaControls.lights = false;
+            tamaControls.lights = false;
+            happydream = setInterval(function(){tama.add('happyness', 0.1)}, 15000);
 		}
 		else
 		{
@@ -177,6 +179,7 @@ var tamaControls =
 			$("#li5").toggle();
 			$("#li7").toggle();
 			tamaControls.lights = true;
+            clearInterval(happydream);
 		}
 	},
 	toggle: function(id)
@@ -372,13 +375,13 @@ var tama =
 			case 500:
 				state = 1;
 				break;
-			case 90000:
+			case 51840000:
 				state = 2;
 				break;
-			case 180000:
+			case 95040000:
 				state = 3;
 				break;
-			case 270000:
+			case 146880000:
 				state = 4;
 				break;
 			default:
@@ -512,5 +515,10 @@ var tama =
             
             alert(defeat.textContent + ' ' + timedefeat.textContent + ' ' + seconds.textContent + '.');
 		}
-	}
+	},
+    
+    help:function()
+    {
+        $('#li7-content').toggle();
+    }
 }

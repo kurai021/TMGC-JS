@@ -23,6 +23,9 @@ $(document).ready( function() {
 			case 'li6':
 				$(this).bind('mousedown', function(e){ tamaControls.Lights();});
 				break;
+            case 'li7':
+                $(this).bind('mousedown', function(e){ tama.help();});
+				break;
 		}
 	});
 	tama.init();
@@ -36,6 +39,14 @@ $(function() {
         $( "#load" ).click(function() {
                 var tamaLoad = localStorage.getItem("tamaVars");
                 tamaVars = JSON.parse(tamaLoad); //var test is now re-loaded!
+
+                if(tamaVars.theme == 'firefoxos'){
+                    var cssLink = $("<link rel='stylesheet' type='text/css' href='css/firefoxos.css'>");
+                    $("head").append(cssLink);
+                }
+                else{
+                    $('link[rel=stylesheet][href~="css/firefoxos.css"]').remove();
+                }
         });
 });
 
@@ -50,4 +61,21 @@ $(function() {
 		$("#li8-content").toggle();
 		$("#li0-content").toggle();
 	});
+    
+    $( "#exit-help" ).on('mousedown', function() {
+		$("#li7-content").toggle();
+	});
 });
+
+$(function(){
+    $("#firefoxos").on('mousedown', function(){
+        var cssLink = $("<link rel='stylesheet' type='text/css' href='css/firefoxos.css'>");
+        $("head").append(cssLink);     
+        tamaVars.theme = 'firefoxos';
+    });
+    
+    $("#themedefault").on('mousedown', function(){
+       $('link[rel=stylesheet][href~="css/firefoxos.css"]').remove();
+        tamaVars.theme = 'default';
+    });
+})

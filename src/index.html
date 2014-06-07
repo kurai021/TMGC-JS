@@ -41,7 +41,7 @@
 						<li id="li4"><i class="fa fa-comment fa-white fa-3x"></i></li>
 						<li id="li5"><i class="fa fa-medkit fa-white fa-3x"></i></li>
 						<li id="li6"><i class="fa fa-moon-o fa-white fa-3x"></i></li>
-						<li id="li7"><i class="fa fa-meh-o fa-white fa-3x"></i></li>
+						<li id="li7"><i class="fa fa-gear fa-white fa-3x"></i></li>
 					</ul>
 				</footer>
 			</nav>
@@ -70,14 +70,13 @@
 						<legend data-l10n-id="saveload">Save/Load</legend>
 						<button id="load" data-l10n-id="load">Load</button>
 						<button id="save" data-l10n-id="save">Save</button>
-						<!--<button id="help" data-l10n-id="help">Help</button>-->
 					</fieldset>
 				</div>	
 				<div id="li1-content" class="li-content header-nav">
 					<fieldset>
 						<legend data-l10n-id="feeding">Feeding</legend>
-						<input type="button" value="Snack" id="snack" data-l10n-id="snackbtn" /><br/>
-						<input type="button" value="Food" id="food" data-l10n-id="foodbtn" /><br/>
+                        <button id="snack" data-l10n-id="snackbtn">Snack</button>
+                        <button id="food" data-l10n-id="foodbtn">Food</button>
 					</fieldset>
 				</div>
 				<div id="li4-content" class="li-content footer-nav">
@@ -88,6 +87,59 @@
 					</fieldset>
 				</div>	
 			</nav>
+            
+            <nav id="navigation">
+                <div id="li7-content" class="li-help header-nav scrollable">
+                    <fieldset>
+                        <legend>Themes</legend>
+                        <h3>Select theme</h3>
+                        <button id="themedefault">Default</button>
+                        <button id="firefoxos">Firefox OS</button>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Help</legend>
+                        
+                        <h3>Now that you have your pet, you must know these things:</h3>
+                        <br>
+                        <ul class="help-list">
+                            <li>A pulsating egg will appear. Your pet will hatch in about 5 seconds.</li><br>
+                            <li>Your pet beep at you for attention and put a notification</li><br>
+                            <li>You can determine the mood, hungry and behavior of your pet with the health meter. It will need to be feed and played with soon after it hatches. You must take good care of your pet right from the start.</li><br>
+                        </ul>
+                        
+                        <h3>You have some options to pay attention:</h3>
+                        <br>
+                        <ul class="help-list">
+                            <li><i class="fa fa-dashboard fa-white fa-1x"></i> Health meter: Check age/weight, discipline, hunger and happiness.</li><br>
+                            <li><i class="fa fa-cutlery fa-white fa-1x"></i> Feed: Select either Meal or Snack.</li><br>
+                            <li><i class="fa fa-tint fa-white fa-1x"></i> Bathroom: Just like real pets, your pet goes to the bathroom. If droppings appear on the screen, it must be cleaned up right away or Tamagotchi will get sick.</li><br>
+                            <li><i class="fa fa-gamepad fa-white fa-1x"></i> Play: Select and check the happiness meter to see it went up</li><br>
+                            <li><i class="fa fa-medkit fa-white fa-1x"></i> Medicine: If a "skull" image appears, your pet is sick and needs medicine. Sometimes 2 or 3 injections are needed before Tamagotchi is well.</li><br>
+                            <li><i class="fa fa-comment fa-white fa-1x"></i> Discipline: It needs discipline, otherwise you will lose your pet</li><br>
+                            <li><i class="fa fa-moon-o fa-white fa-1x"></i> Lights: Select either On or Off by pressing the light button. The light should be turned off when your pet is sleeping, or it might get unhappy!.</li><br>
+                        </ul>
+                        
+                        <h3>About Biology:</h3>
+                        <br>
+                        <ul class="help-list">
+                            <li>One earth day is equal to about one year for your pet.</li><br>
+                            <li>Your pet will change appearance several times before it reaches its adult form.</li><br>
+                        </ul>
+                        
+                        <h3>Will you be a good caretaker?</h3>
+                        <br>
+                        <ul class="help-list">
+                            <li>0-5 YEARS: Try harder next time</li><br>
+                            <li>6-10 YEARS: Room for improvement</li><br>
+                            <li>11-16 YEARS: Good job</li><br>
+                            <li>17-22 YEARS: Excellent</li><br>
+                            <li>23+ YEARS: Amazing!</li><br>
+                        </ul>
+                        
+                        <button id="exit-help" class="large-button">Exit</button>
+                    </fieldset>
+                </div>
+            </nav>
 		</div>
 		
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -95,6 +147,6 @@
         <script type="text/javascript" src="js/initialisation.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/notification.js"></script>
-		<!--<script type="text/javascript" src="//localhost:35729/livereload.js"></script>-->
+		<script type="text/javascript" src="//localhost:35729/livereload.js"></script>
 	</body>
 </html>

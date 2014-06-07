@@ -1,5 +1,5 @@
 {
-    "version": "0.2",
+    "version": "0.3",
     "name": "TMGC-JS",
     "description": "A basic Tamagotchi simulator",
     "launch_path": "/src/index.html",

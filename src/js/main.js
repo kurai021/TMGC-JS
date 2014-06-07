@@ -164,7 +164,6 @@ var tamaControls =
 			$("#li3").toggle();
 			$("#li4").toggle();
 			$("#li5").toggle();
-			$("#li7").toggle();
             tamaControls.lights = false;
             happydream = setInterval(function(){tama.add('happyness', 0.1)}, 15000);
 		}
@@ -177,7 +176,6 @@ var tamaControls =
 			$("#li3").toggle();
 			$("#li4").toggle();
 			$("#li5").toggle();
-			$("#li7").toggle();
 			tamaControls.lights = true;
             clearInterval(happydream);
 		}

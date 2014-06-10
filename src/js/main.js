@@ -41,7 +41,7 @@ var tamaRules =
 		utp: +2*k,
 		insalubrity: (tamaVars.utp) / 25*k,
 		training: 0-tamaVars.doingbullshit*4*k,
-		age: 1/36000
+		age: 1/8640000 // 1 year = 1 earth day
 	},
 	actualizing:function()
 	{
@@ -51,7 +51,7 @@ var tamaRules =
 		this.loop.utp = 0,
 		this.loop.insalubrity = (tamaVars.utp / 25)*k,
 		this.loop.training = -tamaVars.doingbullshit*4*k,
-		this.loop.age = 1/36000
+		this.loop.age = 1/8640000
 	}
 }
 var tamaControls =

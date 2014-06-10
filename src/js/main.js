@@ -1,4 +1,4 @@
-var k = 1/5000;
+var k = 1/1000;
 var loopTime = 0.01*1000;// = 10 ms
 var $water   = $('#water');
 var $tamaPic = $('#tamapic');
@@ -151,6 +151,7 @@ var tamaControls =
 		if(tamaVars.state >= 1)
 		{
 			tamaVars.illness = 0;
+			tama.add('diabetes', -25);
 		}
 	},
 	Lights: function()

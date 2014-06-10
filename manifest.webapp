@@ -13,7 +13,6 @@
         "name": "Richard Armuelles, André Jaenisch",
         "url": "http://github.com/kurai021/TMGC-JS.git"
     },
-    "installs_allowed_from": ["*"],
     "locales": {
         "en": {
             "description": "A basic Tamagotchi simulator",
@@ -40,8 +39,11 @@
     "default_locale": "en",
     "permissions": {
         "desktop-notification" : {
-            "description": "Requerido para mostrar notificaciones"
+            "description": "Required for show notifications"
         }
     },
-    "fullscreen": "false"
+    "installs_allowed_from": ["https://marketplace.firefox.com/app/tmgc-js"],
+    "orientation": ["portrait","portrait-secondary","landscape","landscape-secondary"],
+    "fullscreen": "true",
+    "type": "privileged"
 }

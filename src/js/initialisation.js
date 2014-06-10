@@ -1,4 +1,5 @@
 $(document).ready( function() {
+    
 	$('li i').each(function() {
 		var id = $(this).parent()[0].id;
 		switch(id) {
@@ -78,4 +79,4 @@ $(function(){
        $('link[rel=stylesheet][href~="css/firefoxos.css"]').remove();
         tamaVars.theme = 'default';
     });
-})
+});

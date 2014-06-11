@@ -92,16 +92,18 @@ var tamaControls =
 	{
 		if(type && tamaVars.state >= 1 && !tamaVars.busy)
 		{
-			if(type == 'food')
+			if(type == 'food' && tamaVars.hunger <=97)
 			{
 				tama.add('hunger', 10);
 				tama.add('utp', 10);
 				tama.add('weight', 5, true);
 
 				// According to conventions, it should be addSprites …
-				tamaControls.addsprites('food', 2000);
+				tamaControls.addsprites('food', 1000);
+                
+                tamaControls.evolve('eat', true, 2000);
 			}
-			else if(type == 'snack')
+			else if(type == 'snack' && tamaVars.hunger <=97)
 			{
 				tama.add('hunger', 5);
 				tama.add('utp', 5);
@@ -109,9 +111,15 @@ var tamaControls =
 				tama.add('happyness', 5);
 				tama.add('diabetes', 2.5);
 
-				tamaControls.addsprites('snack', 2000);
+				tamaControls.addsprites('snack', 1000);
+                
+                tamaControls.evolve('eat', true, 2000);
 			}
-			tamaControls.evolve('eat', true, 2000);
+            
+            else if(type == 'food' || type == 'snack' && tamaVars.hunger >=98)
+            {
+                tamaControls.evolve('no', true, 4000);
+            }
 			
 		}
 		this.toggle('#li1-content');
@@ -129,14 +137,18 @@ var tamaControls =
 	{
 		if(tamaVars.state >= 1  && !tamaVars.busy)
 		{
-			tamaControls.evolve('play', true, 6000);
-			tamaControls.addsprites('play', 6000);
-			tama.add('hunger', -10);
-			tama.add('weight', -5, true);
-			tama.add('happyness', 5);
-			tama.add('training', 0.5);
-		}
-			
+            if(tamaVars.hunger >= 30){
+                tamaControls.evolve('play', true, 6000);
+                tamaControls.addsprites('play', 6000);
+                tama.add('hunger', -10);
+                tama.add('weight', -5, true);
+                tama.add('happyness', 5);
+                tama.add('training', 0.5);
+            }
+            else{
+                tamaControls.evolve('no', true, 4000);
+            }
+		}			
 	},
 	Discipline: function(type)
 	{
@@ -158,15 +170,21 @@ var tamaControls =
 	{
 		if(tamaControls.lights)
 		{
-			$screen.css('background-color', '#777777');
-			$tamaPic.attr('src', 'img/chars/0'+state+'/sleep.gif');
-			$("#li1").toggle();
-			$("#li2").toggle();
-			$("#li3").toggle();
-			$("#li4").toggle();
-			$("#li5").toggle();
-            tamaControls.lights = false;
-            happydream = setInterval(function(){tama.add('happyness', 0.1)}, 15000);
+            if(tamaVars.happyness <= 50){
+                $screen.css('background-color', '#777777');
+                $tamaPic.attr('src', 'img/chars/0'+state+'/sleep.gif');
+                $("#li1").toggle();
+                $("#li2").toggle();
+                $("#li3").toggle();
+                $("#li4").toggle();
+                $("#li5").toggle();
+                tamaControls.lights = false;
+                happydream = setInterval(function(){tama.add('happyness', 0.5)}, 15000);
+            }
+            
+            else{
+                tamaControls.evolve('no', true, 4000);
+            }
 		}
 		else
 		{

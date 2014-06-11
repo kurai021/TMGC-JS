@@ -1,5 +1,7 @@
 $(document).ready( function() {
     
+    var lock = navigator.requestWakeLock("cpu");
+    
 	$('li i').each(function() {
 		var id = $(this).parent()[0].id;
 		switch(id) {

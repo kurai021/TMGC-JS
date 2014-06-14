@@ -495,7 +495,6 @@ var tama =
 		{
 			tamaVars.tidy = false;
 			tamaControls.evolve('unhp');
-			console.log("blop")
 		}
 		
 		if(tamaVars.doingbullshit == 0 && !tamaVars.tidy)

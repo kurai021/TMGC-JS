@@ -1,6 +1,6 @@
 $(document).ready( function(){
     
-    setInterval(notification, 30000);
+    setInterval(notification, 60000);
     
     function notification()
     {

@@ -53,5 +53,4 @@ To have a live reloading version, just run `grunt server`.
 
 ## License
 
-This project was released under GNU Public License v3.
-Check out LICENSE.txt for further information.
+This project was released unter BSD 2-Clause license. Check out LICENSE.txt for further information.

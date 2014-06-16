@@ -500,9 +500,7 @@ var tama =
 		if(tamaVars.doingbullshit == 0 && !tamaVars.tidy)
 		{
 			tamaControls.evolve('hp');
-			tamaVars.tidy = true;
-
-				
+			tamaVars.tidy = true;		
 		}
 	},
 	dead:function()

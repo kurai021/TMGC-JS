@@ -1,7 +1,6 @@
 $(document).ready( function(){
-    
     setInterval(notification, 60000);
-    
+
     function notification()
     {
         var hungertext = document.getElementById("hungertext");

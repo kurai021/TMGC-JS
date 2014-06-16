@@ -22,13 +22,25 @@ Easy, isn't it?
 
 ### Development dependencies
 
-The following programs are needed for development. Further are managed by NPM:
+The following programs are needed for development. Further are managed by Bower:
 
  * git
  * npm
- * jQuery v1.7.2
- * jQueryUI v1.8.18
+ * jQuery >= v1.7.2
+ * jQueryUI >= v1.8.18
  * l10n.js
+
+### Install jQuery, jQueryUI and Font Awesome:
+
+If you have errors with JQuery, jQueryUI or Font Awesome, you can install them again in this way:
+
+<pre>
+<code>
+$ sudo npm -g install bower
+$ cd TMGC-JS/src
+$ bower install jquery jqueryui fontawesome
+<code>
+<pre>
 
 ### Start testing
 

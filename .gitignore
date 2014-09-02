@@ -198,6 +198,7 @@ parts/
 var/
 sdist/
 develop-eggs/
+node_modules/
 .installed.cfg
 
 # Installer logs
@@ -212,3 +213,8 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#################
+## Vim
+#################
+*.swp

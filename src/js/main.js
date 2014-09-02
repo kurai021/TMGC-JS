@@ -27,7 +27,7 @@ var tamaVars =
         dung:0,
         sick: false,
         theme: 'default'
-}
+};
 
 var tamaRules =
 {
@@ -45,15 +45,15 @@ var tamaRules =
 	},
 	actualizing:function()
 	{
-		this.loop.hunger = -1*k,
-		this.loop.happyness = -0.05*k-tamaVars.doingbullshit*4*k,
-		this.loop.illness = +0.5*k + tamaVars.diabetes/2*k,
-		this.loop.utp = 0,
-		this.loop.insalubrity = (tamaVars.utp / 25)*k,
-		this.loop.training = -tamaVars.doingbullshit*4*k,
-		this.loop.age = 1/8640000
+		this.loop.hunger = -1*k;
+		this.loop.happyness = -0.05*k-tamaVars.doingbullshit*4*k;
+		this.loop.illness = +0.5*k + tamaVars.diabetes/2*k;
+		this.loop.utp = 0;
+		this.loop.insalubrity = (tamaVars.utp / 25)*k;
+		this.loop.training = -tamaVars.doingbullshit*4*k;
+		this.loop.age = 1/8640000;
 	}
-}
+};
 var tamaControls =
 {
 	currentTabId: '',
@@ -179,7 +179,7 @@ var tamaControls =
                 $("#li4").toggle();
                 $("#li5").toggle();
                 tamaControls.lights = false;
-                happydream = setInterval(function(){tama.add('happyness', 0.5)}, 15000);
+                happydream = setInterval(function(){tama.add('happyness', 0.5);}, 15000);
             }
             
             else{
@@ -201,7 +201,7 @@ var tamaControls =
 	},
 	toggle: function(id)
 	{
-		if(this.currentTabId != '')
+		if(this.currentTabId !== '')
 		{
 			$(this.currentTabId).toggle(false);
 		}
@@ -294,35 +294,36 @@ var tamaControls =
 				$screen.append(buffer);
 				if(time)
 				{
-					setTimeout(function(){$('.food').remove()}, time);
+					setTimeout(function(){$('.food').remove();}, time);
 				}
 				break;
 			case 'snack':
 				buffer = "<img class=\"food\" src=\"./img/other/snack.gif\" />";
 				$screen.append(buffer);
-				setTimeout(function(){$('.food').remove()}, time);
+				setTimeout(function(){$('.food').remove();}, time);
 				break;
 			case 'play': 
-				buffer = "<img id=\"stars1\" class=\"play\" src=\"./img/other/stars.gif\" />"
-				buffer += "<img id=\"stars2\" class=\"play\" src=\"./img/other/stars.gif\" />"
+				buffer = "<img id=\"stars1\" class=\"play\" src=\"./img/other/stars.gif\" />";
+				buffer += "<img id=\"stars2\" class=\"play\" src=\"./img/other/stars.gif\" />";
 				$screen.append(buffer);
-				setTimeout(function(){$('.play').remove()}, time);
+				setTimeout(function(){$('.play').remove();}, time);
 				break;
 			case 'sick':
 				if(time >= 0)
 				{
-					buffer = "<img class=\"skull\" src=\"./img/other/skull.gif\" />"
+					buffer = "<img class=\"skull\" src=\"./img/other/skull.gif\" />";
 					$screen.append(buffer);
 				}
 				else
 				{
 					$('.skull').remove();
 				}
+				break;
 			default:
 				break;
 		}
 	}
-}
+};
 var tama =
 {
 	counter: 0,
@@ -418,9 +419,9 @@ var tama =
 		{
 			if(tamaVars.water >= -50)
 			{
-				tamaVars.water -= 5
+				tamaVars.water -= 5;
 				$water.css('left', tamaVars.water+'px');
-				if(tamaVars.water == -50)
+				if(tamaVars.water === -50)
 				{
 					tamaVars.busy = false;
 					$('.dung').remove();
@@ -497,7 +498,7 @@ var tama =
 			tamaControls.evolve('unhp');
 		}
 		
-		if(tamaVars.doingbullshit == 0 && !tamaVars.tidy)
+		if(tamaVars.doingbullshit === 0 && !tamaVars.tidy)
 		{
 			tamaControls.evolve('hp');
 			tamaVars.tidy = true;		
@@ -535,4 +536,4 @@ var tama =
     {
         $('#li7-content').toggle();
     }
-}
+};

@@ -32,10 +32,10 @@ $(document).ready( function() {
 		}
 	});
 	tama.init();
-	$('#snack').bind('mouseup', function() { tamaControls.FeedingTime('snack') });
-	$('#food').bind('mouseup', function() { tamaControls.FeedingTime('food') });
-	$('#praise').bind('mouseup', function() { tamaControls.Discipline('praise') });
-	$('#punish').bind('mouseup', function() { tamaControls.Disciplines('punish') });
+	$('#snack').bind('mouseup', function() { tamaControls.FeedingTime('snack'); });
+	$('#food').bind('mouseup', function() { tamaControls.FeedingTime('food'); });
+	$('#praise').bind('mouseup', function() { tamaControls.Discipline('praise'); });
+	$('#punish').bind('mouseup', function() { tamaControls.Disciplines('punish'); });
 });
 
 $(function() {

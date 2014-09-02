@@ -10,13 +10,11 @@ This is a rewrite and extended version.
 So you want to join the team? Great!
 Here's how to get a working set-up:
 
-<pre>
-<code>
+```bash
 $ git clone https://github.com/kurai021/TMGC-JS.git TMGC-JS.git
 $ cd TMGC-JS.git
 $ npm install
-</code>
-</pre>
+```
 
 Easy, isn't it?
 
@@ -29,26 +27,25 @@ The following programs are needed for development. Further are managed by Bower:
  * jQuery >= v1.7.2
  * jQueryUI >= v1.8.18
  * l10n.js
+ * …
 
 ### Install jQuery, jQueryUI and Font Awesome:
 
 If you have errors with JQuery, jQueryUI or Font Awesome, you can install them again in this way:
 
-<pre>
-<code>
+```bash
 $ sudo npm -g install bower
 $ cd TMGC-JS/src
 $ bower install jquery jqueryui fontawesome
-<code>
-<pre>
+```
 
 ### Start testing
 
-It's planned to add Jasmine as Unit testing framework.
+We're going to use Jasmine 2 as BDD Testing Framework.
 
 ### Grunt jobs
 
-Grunt does all the ugly work for us (or will do).
+Grunt does all the ugly work for us.
 To have a live reloading version, just run `grunt server`.
 
 ## License

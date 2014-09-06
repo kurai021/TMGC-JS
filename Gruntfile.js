@@ -8,11 +8,7 @@ var mountFolder = function (connect, dir) {
 
 module.exports = function(grunt) {
 
-  // load all grunt tasks, but grunt-template-jasmine-istanbul
-  require('matchdep').filterDev('grunt-contrib-*').forEach(grunt.loadNpmTasks);
-  grunt.loadNpmTasks('grunt-jsdoc');
-  grunt.loadNpmTasks('grunt-notify');
-  grunt.loadNpmTasks('grunt-browserify');
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Project configuration.
   grunt.initConfig({
@@ -30,7 +26,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['src/js/*.js', 'src/test/specs/*Spec.js'],
-        tasks: ['jshint', 'jsdoc', 'jasmine:coverage', 'jasmine:pivotal:build']
+        tasks: ['jshint', 'jsdoc', 'mocha']
       },
       concat: {
         files: ['build/tmgc.js'],
@@ -65,45 +61,13 @@ module.exports = function(grunt) {
       }
     },
 
-    jasmine: {
-      pivotal: {
-        src: 'src/js/*.js',
-        options: {
-          specs: 'test/specs/*Spec.js',
-          helpers: 'test/helpers/*Helper.js',
-          outfile: 'test/SpecRunner.html',
-          keepRunner: true,
-          display: 'short'
-        }
+    mocha: {
+      all: {
+        src: ['test/testrunner.html'],
       },
-      coverage: {
-        src: 'src/js/*.js',
-        files: ['src/**/*.js','!src/test/**/*.js'],
-        options: {
-          specs: 'test/specs/*Spec.js',
-          display: 'full',
-          template: require('grunt-template-jasmine-istanbul'),
-          templateOptions: {
-            coverage: 'src/bin/coverage/coverage.json',
-            report: [
-              {
-                type: 'html',
-                options: {
-                  dir: 'src/bin/coverage/html'
-                }
-              },
-              {
-                type: 'cobertura',
-                options: {
-                  dir: 'src/bin/coverage/cobertura'
-                }
-              },
-              {
-                type: 'text-summary'
-              }
-            ]
-          }
-        }
+      options: {
+        reporter: 'Nyan',
+        run: true
       }
     },
 
@@ -150,7 +114,7 @@ module.exports = function(grunt) {
     notify_hooks: {
       options: {
         enabled: true,
-  title: 'Grunt for TMGC'
+        title: 'Grunt for TMGC'
       }
     }
   });
@@ -159,8 +123,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint','watch']);
   grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'browserify:watchClient','watch:client']);
   grunt.registerTask('dev', ['notify_hooks','watch']);
-  grunt.registerTask('test', ['jshint', 'jasmine']);
-  grunt.registerTask('test:coverage', ['jshint', 'jasmine:coverage']);
+  grunt.registerTask('test', ['mocha']);
   grunt.registerTask('server', function (target) {
     grunt.task.run([
       'connect:livereload',

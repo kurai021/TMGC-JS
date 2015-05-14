@@ -15,9 +15,7 @@ function Menu() {
 Object.defineProperties(Menu.prototype, {
     toggleSound: {
         value: function() {
-            console.log(this, this.sound, !this.sound);
             this.sound = !this.sound;
-            console.log(this, this.sound, !this.sound);
             return this.sound;
         },
         writable: false,

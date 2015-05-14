@@ -1,3 +1,30 @@
+function Menu() {
+    var props = {
+        time: {value: 1, writable: false, enumerable: false},
+        sound: {value: true, writable: true, enumerable: false},
+        music: {value: true, writable: true, enumerable: false}
+    };
+
+    if (this instanceof Menu) { // called with new as constructor
+        Object.defineProperties(this, props);
+    } else { // called as fabric function
+        return Object.create(Menu.prototype, props);
+    }
+}
+
+Object.defineProperties(Menu.prototype, {
+    toggleSound: {
+        value: function() {
+            console.log(this, this.sound, !this.sound);
+            this.sound = !this.sound;
+            console.log(this, this.sound, !this.sound);
+            return this.sound;
+        },
+        writable: false,
+        configurable: true
+    }
+})
+
 var k = 1/1000;
 var loopTime = 0.01*1000;// = 10 ms
 var $water   = $('#water');

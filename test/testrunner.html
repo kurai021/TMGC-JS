@@ -1,32 +1,34 @@
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Mocha Tests</title>
-  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
-</head>
-<body>
-  <div id="mocha"></div>
-  <script src="../node_modules/mocha/mocha.js"></script>
-  <script src="../node_modules/chai/chai.js"></script>
-
-  <!-- will be overridden when running from Grunt -->
-  <script>
-    mocha.setup('bdd')
-    mocha.reporter('spec'); // or 'dot' or 'nyan' et al.
-    var expect = chai.expect;
-  </script>
-
-  <!-- Tests, therefore, move one level up (= ..) from test/ -->
-  <script src="../src/js/main.js"></script>
-
-  <!-- Specs, . == test/ directory -->
-  <script src="./specs/petSpec.js"></script>
-
-  <script>
-    // Only tests run in real browser, injected script run if options.run === true
-    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
-      mocha.run();
-    }
-  </script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Mocha Tests</title>
+        <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+    </head>
+    <body>
+        <div id="mocha"><p><a href=".">Index</a></p></div>
+        <div id="messages"></div>
+        <script src="../node_modules/mocha/mocha.js"></script>
+        <script src="../node_modules/chai/chai.js"></script>
+        <script src="../node_modules/js-fixtures/fixtures.js"></script>
+      
+        <!-- will be overridden when running from Grunt -->
+        <script>
+            mocha.setup('bdd')
+            mocha.reporter('spec'); // or 'dot' or 'nyan' et al.
+            var expect = chai.expect;
+            mocha.checkLeaks();
+            mocha.run();
+        </script>
+      
+        <!-- Fixtures -->
+        <script>
+            fixtures.path = 'fixtures';
+        </script>
+      
+        <!-- Tests, therefore, move one level up (= ..) from test/ -->
+        <script src="../src/js/main.js"></script>
+      
+        <!-- Specs, . == test/ directory -->
+        <script src="./specs/petSpec.js"></script>
+    </body>
 </html>

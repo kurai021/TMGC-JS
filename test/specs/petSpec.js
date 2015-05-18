@@ -27,12 +27,8 @@ describe("User interface", function() {
 
         it("should load fixtures", function() {
             fixtures.load("menu.html");
-            var body = fixtures.body();
-            /* FIXME: Figure out, why doc is null! 
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(body, "text/html");
-            */
-            expect(body).to.be.a("string");
+            var content = fixtures.bodyAsDom();
+            expect(content[0]).to.eq('a');
         });
     });
 });

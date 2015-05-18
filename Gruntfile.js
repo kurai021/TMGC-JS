@@ -89,17 +89,21 @@ module.exports = function(grunt) {
     },
 
     connect: {
-      options: {
-        hostname: 'localhost',
-        port: 8000,
-      },
       livereload: {
         options: {
-          middleware: function (connect) {
-            return [
-              mountFolder(connect, 'src'),
-              lrSnippet
-            ];
+          hostname: 'localhost',
+          port: 8000,
+          base: 'test/',
+          middleware: function(connect, options, middlewares) {
+            //mountFolder(connect, 'src'),
+            //lrSnippet,
+            middlewares.unshift(function(req, res, next) {
+              // Allow CORS
+              res.setHeader('Access-Control-Allow-Origin', '*');
+              res.setHeader('Access-Control-Allow-Methods', '*');
+              return next();
+            });
+            return middlewares;
           }
         }
       }
@@ -123,7 +127,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint','watch']);
   grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'browserify:watchClient','watch:client']);
   grunt.registerTask('dev', ['notify_hooks','watch']);
-  grunt.registerTask('test', ['mocha']);
+  grunt.registerTask('test', ['connect:livereload', 'mocha']);
   grunt.registerTask('server', function (target) {
     grunt.task.run([
       'connect:livereload',

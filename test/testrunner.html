@@ -14,10 +14,8 @@
         <!-- will be overridden when running from Grunt -->
         <script>
             mocha.setup('bdd')
-            mocha.reporter('spec'); // or 'dot' or 'nyan' et al.
+            mocha.reporter('html'); // or 'dot' or 'nyan' et al.
             var expect = chai.expect;
-            mocha.checkLeaks();
-            mocha.run();
         </script>
       
         <!-- Fixtures -->
@@ -30,5 +28,10 @@
       
         <!-- Specs, . == test/ directory -->
         <script src="./specs/petSpec.js"></script>
+
+        <script>
+            mocha.checkLeaks();
+            mocha.run();
+        </script>
     </body>
 </html>

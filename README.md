@@ -41,7 +41,8 @@ $ bower install jquery jqueryui fontawesome
 
 ### Start testing
 
-We're going to use Jasmine 2 as BDD Testing Framework.
+We're going to use Mocha + Chai as BDD Testing Framework.
+Just run `http-server -p 8000 --cors in a terminal` and point your browser of choice to [the address](localhost:8000/test/testrunner.html).
 
 ### Grunt jobs
 

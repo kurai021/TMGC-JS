@@ -28,7 +28,9 @@ describe("User interface", function() {
         it("should load fixtures", function() {
             fixtures.load("menu.html");
             var content = fixtures.bodyAsDom();
-            expect(content[0]).to.eq('a');
+            var iFrameWindow = fixtures.window();
+            //expect(content[0]).to.eq('a');
+            expect(iFrameWindow.document.body.children).to.eq('b');
         });
     });
 });

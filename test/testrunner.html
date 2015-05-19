@@ -7,6 +7,8 @@
     <body>
         <div id="mocha"><p><a href=".">Index</a></p></div>
         <div id="messages"></div>
+        <script src="../src/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../src/bower_components/jquery-ui/ui/jquery-ui.js"></script>
         <script src="../node_modules/mocha/mocha.js"></script>
         <script src="../node_modules/chai/chai.js"></script>
         <script src="../node_modules/js-fixtures/fixtures.js"></script>
@@ -24,10 +26,13 @@
         </script>
       
         <!-- Tests, therefore, move one level up (= ..) from test/ -->
+        <script src="../src/js/initialisation.js"></script>
         <script src="../src/js/main.js"></script>
+        <script src="../src/js/notification.js"></script>
       
         <!-- Specs, . == test/ directory -->
         <script src="./specs/petSpec.js"></script>
+        <script src="./specs/menuSpec.js"></script>
 
         <script>
             mocha.checkLeaks();
